@@ -1,0 +1,21 @@
+<div ng-if="foundItems.found.length!= 0">
+  List Count of Menu Categories:- {{foundItems.found.length}}
+  <table>
+      <tr>
+        <th width="20%" class='headerColumn'>Short Name</th>
+        <th width="40%" class='headerColumn'>Name</th>
+        <th width="40%" class='headerColumn' colspan='2'>Discription</th>
+      </tr>
+      <tr ng-repeat="category in foundItems.found">
+        <th>{{ category.short_name }} </th>
+        <th>{{ category.name }} </th>
+        <th>{{ category.description }} </th>
+        <th>
+            <button class="btn btn-primary" ng-click='foundItems.removeItem($index);'>
+                Don't want this one!
+            </button>
+        </th>
+      </tr>
+    </table>
+</div>
+<span class="emptyMessage">{{foundItems.errorMessage}}</span>
